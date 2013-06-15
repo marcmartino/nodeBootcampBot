@@ -73,7 +73,7 @@ module.exports = function (bot) {
 			}
 			if (!userFound && (message + ", ").search(thisRegex) === 0) {
 				var foundText = message.substr(message.indexOf(", ") + 2);
-				console.log("found possible rogue candidate");
+				//console.log("found possible rogue candidate");
 				var exec = require('child_process').exec;
 				exec('curl -X POST https://api.twilio.com/2010-04-01/Accounts/ACf4998dded0758c6c977d5f000bf4e0c2/SMS/Messages.json \
 			    -u ACf4998dded0758c6c977d5f000bf4e0c2:67a4e6ba8f77d94691879664014da658 \
