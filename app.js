@@ -41,7 +41,7 @@ var irc = require('irc'),
 		if (messageAliasSpot >= 0) {
 			console.log("it's time to go");
 			botFunctions.tellUser(config.channels[0], from, "i agree");
-		else if (botNameSpot >= 0)) {
+		} else if (botNameSpot >= 0) {
 			console.log("it's time to go");
 			var cleanedMessage = botFunctions.cleanIrcMessage(config.botName)
 			botFunctions.processMessage()
