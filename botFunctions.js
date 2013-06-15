@@ -6,6 +6,10 @@ module.exports = function (bot) {
 			console.log('javascript eval');
 			_this.tellUser(channel, user, eval(command));
 		},
+		headsOrTails: function (channel, user, command) {
+			var randNum = Math.floor(Math.rand() * 2);
+			_this.tellUser(channel, user, (randNum ===1 ? "Heads" : "Tails"));
+		},
 		tellUser: function (channel, user, message) {
 			bot.say(channel, user + ", " + message);
 		},
@@ -43,7 +47,7 @@ module.exports = function (bot) {
 			//console.log(actionKeys[actionFound]);
 			actionString = actionKeys[actionFound];
 			actionFunction = this.actions[actionString];
-			actionParameter = command.substring(actionString.length);
+			actionParameter = (command | "").substring(actionString.length);
 			actionFunction(channel, user, actionParameter);
 		}
 	};
