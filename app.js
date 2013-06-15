@@ -9,6 +9,10 @@ var irc = require('irc'),
   });
 
 	bot.addListener("join", function(channel, who) {
-		// Welcome them in!
-		bot.say(channel, who + "...dude...welcome back!");
+		bot.say(channel, who + " ...welcome to the channel");
+	});
+
+	bot.addListener("message", function(from, to, text, message) {
+		bot.say(from, "thank you for the message!");
+		bot.say(config.channels[0], "i agree");
 	});
