@@ -14,6 +14,9 @@ var irc = require('irc'),
   });
 
   botFunctions = botFunctions(bot);
+  botFunctions.actions = {
+  	"(%)": botFunctions.javascriptEval
+  }
 
 	console.log("starting up"); 
 
